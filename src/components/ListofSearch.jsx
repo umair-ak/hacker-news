@@ -8,6 +8,7 @@ export default function ListofSearch(props) {
         return(
             <Item 
             key = {obj.objectID}
+            objID = {obj.objectID}
             title = {obj.title}
             url = {obj.url}
             author = {obj.author}
@@ -17,7 +18,7 @@ export default function ListofSearch(props) {
     }
 
     let [news,setNews] = useState([]);
-  
+    
 
     useEffect(() => {
       axios.get("http://hn.algolia.com/api/v1/search?query="+props.query).then((resp)=>{
