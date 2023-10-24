@@ -19,10 +19,10 @@ export default function App() {
 
   return (
     <div>
-    <Search sq={handlequery} />
     
-
+    
     <BrowserRouter>
+      <Search sq={handlequery} />
         <Routes>
         <Route path="/" element={<ListofSearch query={query} />} />
         <Route path="/item/:itemId" element={<PostDetails />} />

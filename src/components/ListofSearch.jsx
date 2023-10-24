@@ -22,7 +22,6 @@ export default function ListofSearch(props) {
 
     useEffect(() => {
       axios.get("http://hn.algolia.com/api/v1/search?query="+props.query).then((resp)=>{
-        console.log(resp.data);
         setNews(resp.data.hits);
       })
 
