@@ -1,0 +1,11 @@
+.news{
+    margin-left: 5%;
+    margin-bottom: 1.5%;
+}
+h3{
+    display: inline-block;
+}
+span{
+    margin-left: 15px;
+    font-size: 1rem;
+}

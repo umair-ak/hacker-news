@@ -15,6 +15,7 @@ export default function PostDetails() {
         return(
             
             <Comment 
+            key={comment.id}
             author={comment.author}
             text={formater(comment.text)}
             reply={comment.children}
@@ -34,7 +35,6 @@ export default function PostDetails() {
     useEffect(()=>{
         const fetchData = async ()=>{
             const result = await axios("http://hn.algolia.com/api/v1/items/"+itemId);
-            console.log(result.data);
             setSt(result.data);
         }
         fetchData();
@@ -47,6 +47,7 @@ export default function PostDetails() {
     <b>author : </b>{st?st.author:null}<b> points : </b>{st?st.points:null}
     </p>
     <div className='box'>
+    <h3>Comments</h3>
     {st?st.children.slice(0,show).map(createComments):null}
     {!(show<3) && <button className="btn btn-primary btn-sm" onClick={()=>{(show<=3) ?setShow(3):setShow(show-3)}}>show less</button>}
     <button className="btn btn-primary btn-sm" onClick={()=>{setShow(show+4);}}>show more</button>

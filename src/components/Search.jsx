@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
 import "./Search.css";
+import {useNavigate} from "react-router-dom";
 
 
 export default function Search(props) {
 
 
-
+    let navigate = useNavigate();
     let [query,setquery] = useState("");
     function handleChange(event){
         setquery(event.target.value);
@@ -14,6 +15,7 @@ export default function Search(props) {
     async function handleSubmit (event) {
         event.preventDefault();
         props.sq(query);
+        navigate("/");
     }
 
   return (

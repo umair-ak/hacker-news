@@ -19,13 +19,24 @@ export default function App() {
 
   return (
     <div>
-    
-    
+
     <BrowserRouter>
-      <Search sq={handlequery} />
-        <Routes>
-        <Route path="/" element={<ListofSearch query={query} />} />
-        <Route path="/item/:itemId" element={<PostDetails />} />
+    <Routes>
+    
+        <Route path="/" element={
+          <div>
+          <Search sq={handlequery} />
+          <ListofSearch query={query} />
+        </div>} 
+          />
+          
+        <Route path="/item/:itemId" element={
+          <div>
+          <Search sq={handlequery} />
+          <PostDetails />
+          </div>
+        }
+        />
         </Routes>
     </BrowserRouter>
 
